@@ -140,19 +140,18 @@ Return the resulting output array.
 const fizzbuzz = (arr) => {
   const outputArr = [];
   arr.forEach(element => {
-    let output = '';
+    let output = element;
     let flag = false;
     if(element % 3 === 0) {
-      output += 'Fizz';
+      output = 'Fizz';
       flag = true;
     }
     if(element % 5 === 0) {
-      output += flag ? ' ' : '';
-      output += 'Buzz';
-      flag = true;
-    }
-    if(!flag) {
-      output = element;
+      if(flag) {
+        output += ' Buzz';
+      } else {
+        output = 'Buzz';
+      }
     }
     outputArr.push(output);
   });
