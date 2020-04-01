@@ -138,7 +138,25 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const outputArr = [];
+  arr.forEach(element => {
+    let output = '';
+    let flag = false;
+    if(element % 3 === 0) {
+      output += 'Fizz';
+      flag = true;
+    }
+    if(element % 5 === 0) {
+      output += flag ? ' ' : '';
+      output += 'Buzz';
+      flag = true;
+    }
+    if(!flag) {
+      output = element;
+    }
+    outputArr.push(output);
+  });
+  return outputArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
